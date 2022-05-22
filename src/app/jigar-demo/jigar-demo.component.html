@@ -1,0 +1,173 @@
+<!-- <input type="text" *ngIf="Isvisible">
+
+<br>
+
+<br>
+
+<br>
+
+<input type="text" [hidden]="!Isvisible">
+
+<div *ngIf="Isvisible">
+
+</div> -->
+
+<!-- 
+[] > html Attribute -->
+
+{{currentDate | date:"MM/dd/yy" }}
+<br>
+{{ amount | currency:'EUR' }}
+
+<br>
+{{ LastName | uppercase }}
+<br>
+{{ amount | multiply: 100 }}
+
+
+<input type="text" [(ngModel)]="LastName">
+<br>
+<br>
+<input type="text" value="{{LastName}}">
+
+<button (click)="onClickEvent()">Save</button>
+
+
+<a [routerLink]="['/parent']" routerLink="parent" routerLinkActive="active">parent Component</a>
+
+<br>
+<br>
+<a [routerLink]="['/jigarDemo']"  routerLink="jigarDemo" routerLinkActive="active">Jigar Demo</a>
+
+<input type="text" onblur=""  onchange="" id="idText" appBackgroudDirective>
+<br>
+
+<br>
+<input type="text" id="idText1" appBackgroudDirective>
+<br>
+
+<br>
+<input type="text" id="idText1" appBackgroudDirective>
+<br>
+
+<br>
+<input type="text" id="idText1" appBackgroudDirective>
+
+
+<!-- <input type="text" name="" id="" #firstName [(ngModel)]="FirstName">
+<p>{{firstName.value}}</p>
+
+<appshruticomponent *ngIf="Isvisible" [element]="data" #appshruticomponent (changeDataEvent)="changeEvent($event)">
+</appshruticomponent>
+
+<button (click)="clickevent()">save</button> -->
+<!-- https://www.bezkoder.com/angular-12-form-validation/ -->
+
+
+
+<!-- <div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input
+        type="text"
+        formControlName="fullname"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.get('fullname')?.errors }"
+      />
+
+      
+
+      <div *ngIf="submitted && form.get('fullname')?.errors" class="invalid-feedback">
+        <div *ngIf="form.get('fullname')?.errors?.['required']">Fullname is required</div>
+      </div>
+
+      <div *ngIf="submitted && form.get('fullname')?.errors" class="invalid-feedback">
+        <div *ngIf="form.get('fullname')?.errors?.['required']">Fullname is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Username</label>
+      <input
+        type="text"
+        formControlName="username"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.get('username')?.errors }"
+      />
+       <div *ngIf="submitted && form.get('username')?.errors" class="invalid-feedback">
+          <div *ngIf="form.get('username')?.errors?.['required']">Username is required</div>
+          <div *ngIf="form.get('username')?.errors?.['minlength']">
+            Username must be at least 6 characters
+          </div>
+          <div *ngIf="form.get('username')?.errors?.['maxlength']">
+            Username must not exceed 20 characters
+          </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.get('email')?.errors }"
+      />
+      <div *ngIf="submitted && form.get('email')?.errors" class="invalid-feedback">
+          <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+          <div *ngIf="form.get('email')?.errors?.['email']">Email is invalid</div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.get('password')?.errors }"
+      />
+        <div *ngIf="submitted && form.get('password')?.errors" class="invalid-feedback">
+          <div *ngIf="form.get('password')?.errors?.['required']">Password is required</div>
+          <div *ngIf="form.get('password')?.errors?.['minlength']">
+            Password must be at least 6 characters
+          </div>
+          <div *ngIf="form.get('password')?.errors?.['maxlength']">
+            Username must not exceed 40 characters
+          </div>
+        </div>
+    </div>
+    
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        class="form-check-input"
+        [ngClass]="{ 'is-invalid': submitted && form.get('acceptTerms')?.errors }"
+      />
+      <label for="acceptTerms" class="form-check-label"
+        >I have read and agree to the Terms</label
+      >
+       <div *ngIf="submitted && form.get('acceptTerms')?.errors" class="invalid-feedback">
+          Accept Terms is required
+        </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Register</button>
+      <button
+        type="button"
+        (click)="onReset()"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>  -->
+
+<div *ngFor="let item of array; index as i"> 
+
+  {{item.FirstName}}
+  <br>
+  {{item.LastName}}
+</div>
+
+

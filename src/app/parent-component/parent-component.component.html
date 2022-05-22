@@ -1,0 +1,16 @@
+<p>parent-component works!</p>
+
+
+
+<a [routerLink]="['/parent']" routerLink="parent" routerLinkActive="active">parent Component</a>
+
+<br>
+<br>
+<a [routerLink]="['/jigarDemo']"  routerLink="jigarDemo" routerLinkActive="active">Jigar Demo</a>
+
+
+<app-child-component [element123]="FirstName" 
+(outPutEvent)="callParentEvent($event)">
+
+</app-child-component>
+

@@ -1,0 +1,41 @@
+
+FirstName : <input type="text" appDemoDirective [inputElement]="color" name="" id="" #firstname [(ngModel)]="firstName">
+<br>
+<br>
+FirstName : <input type="text" name="" id="" #lastname>
+
+
+<button (click)="onClickShruti()"> SAVE </button>
+
+<br>
+<br>
+<label>{{firstName}}</label>
+<br>
+<label>{{Lastname}}</label>
+
+<app-angular-hooks [element]="onChangeValueCheck" *ngIf="isVisible"></app-angular-hooks> 
+<!-- //Child componet -->
+
+<!-- <p>{{firstName}}</p>
+
+
+{{Ischecked}}
+
+<input type="text" name="" id="txtName" placeholder ="{{firstName}}" >
+<br>
+<br>
+<input type="text" name="" id="" (keydown.enter)="keydownEnter($event)"
+ >
+
+
+<button (click)="onClickShruti()" >{{firstName}}</button>  -->
+
+<!-- () >> Events
+[] >> attributes -->
+
+
+<div *ngFor="let item of list">
+    {{item.email}}
+
+</div>
+

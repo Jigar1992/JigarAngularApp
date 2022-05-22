@@ -1,0 +1,12 @@
+<p>parent-jay-component works!</p>
+
+<p>{{firstName}}</p>
+
+<input type="text" [disabled]="disabled" [(ngModel)]="firstName">
+
+
+<button (click)="getfirstName()">Save</button>
+
+
+<app-child-jay-component *ngIf="isVIew" #childComponent [firstNameFromParent]="firstName" (emitToParent)="emitToParentCall($event)"></app-child-jay-component>
+

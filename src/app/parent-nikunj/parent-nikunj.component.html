@@ -1,0 +1,62 @@
+<p>parent-nikunj works!</p>
+
+<!-- This is parent component  of nikunj
+
+
+<br>
+{{UserName}}
+<br>
+<br>
+
+<input type="text" appNikunjDirectives [value]="UserName">
+<br>
+<br>
+<br>
+<input type="text" appNikunjDirectives >
+<br>
+<input type="text" appNikunjDirectives >
+
+<app-child-nikunj *ngIf="isShow" [elementValue]="UserName" (outPutElement)="GetEventValue($event)">
+
+</app-child-nikunj>
+<br>
+<button (click)="hidechild()">hidechild</button> -->
+<a [routerLink]="['/productShruti']" routerLinkActive="active">Redirect to productShruti</a>
+<a [routerLink]="['/NikunjParent']" routerLinkActive="active">Redirect to NikunjParent</a>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+
+    <input type="text" formControlName="FirstName" />
+   
+       <div *ngIf="submitted && form.get('FirstName')?.errors" >
+           <div *ngIf="form.get('FirstName')?.errors?.['required']">FirstName is required</div>
+         </div>
+
+         <!-- {{form.get('FirstName')?.errors}} -->
+         <!-- Touch : {{form.get('FirstName')?.touched}}
+         <br>
+         dirty : {{form.get('FirstName')?.dirty}}
+         <br>
+         invalid : {{form.get('FirstName')?.invalid}} -->
+<br>
+<br>
+
+<input type="text" formControlName="Email" />
+   
+       <div *ngIf="submitted && form.get('Email')?.errors" >
+           <div *ngIf="form.get('Email')?.errors?.['required']">Email is required</div>
+
+           <div *ngIf="form.get('Email')?.errors?.['email']">Please enter a valid email!!</div>
+         </div>
+         <br>
+         <br>   
+         <button type="submit" [disabled]="!form.valid"> Save </button>
+
+</form>
+
+{{ UserName | uppercase}}
+
+
+   
+   

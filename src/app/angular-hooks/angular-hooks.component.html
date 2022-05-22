@@ -1,0 +1,34 @@
+<p>angular-hooks works!</p>
+
+{{element}}
+
+<input type="text" name="" id="" [ngStyle]="{'background-color':firstNameColor}"  [(ngModel)]="FirstName">
+
+<input type="text" name="" id="" [ngClass]="{'active': firstNameColor ==='red' }">
+
+<input type="text" name="" id="" class="active" >
+
+<br>
+
+<input type="checkbox" name=""  id="" [(ngModel)]="isChecked">
+
+<br>
+<button (click)="click()">SAVE</button>
+
+<button (click)="clickShow()">SAVE SHow</button>
+
+
+<table>
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>age</th>
+    </tr>
+
+    <tr *ngFor="let item of listProperty; index as i">
+        <td>{{item.FirstName}}</td>
+        <td>{{item.LastName}}</td>
+        <td>{{item.age}}</td>
+    </tr>
+</table>
+
