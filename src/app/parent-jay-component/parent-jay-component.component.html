@@ -2,11 +2,22 @@
 
 <p>{{firstName}}</p>
 
-<input type="text" [disabled]="disabled" [(ngModel)]="firstName">
+<input appJayDemoDirectives type="text" [disabled]="disabled" [(ngModel)]="firstName">
 
 
-<button (click)="getfirstName()">Save</button>
+<button [ngStyle]="{background:firstName}" (click)="getfirstName()">Save</button>
 
+<!-- 
+<app-child-jay-component *ngIf="isVIew" #childComponent [firstNameFromParent]="firstName" (emitToParent)="emitToParentCall($event)"></app-child-jay-component> -->
 
-<app-child-jay-component *ngIf="isVIew" #childComponent [firstNameFromParent]="firstName" (emitToParent)="emitToParentCall($event)"></app-child-jay-component>
+<div *ngFor="let item of list;index as indexOfelement">
+   
+    {{indexOfelement}}
+
+    {{item.FirstName}}
+
+    <span>{{item.LastName}}</span>
+
+    
+</div>
 

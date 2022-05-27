@@ -33,6 +33,7 @@ import { ParentJayComponentComponent } from './parent-jay-component/parent-jay-c
 import { ChildJayComponentComponent } from './child-jay-component/child-jay-component.component';
 import { TAParentComponent } from './ta-parent/ta-parent.component';
 import { TAChildComponent } from './ta-child/ta-child.component';
+import { JayDemoDirectivesDirective } from './directive/jay-demo-directives.directive';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { TAChildComponent } from './ta-child/ta-child.component';
     ParentJayComponentComponent,
     ChildJayComponentComponent,
     TAParentComponent,
-    TAChildComponent
+    TAChildComponent,
+    JayDemoDirectivesDirective
    
   ],
   exports:[DemoDirectiveDirective],

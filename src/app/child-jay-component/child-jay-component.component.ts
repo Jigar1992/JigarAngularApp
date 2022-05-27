@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, Output,EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -8,11 +10,17 @@ import { Component, Input, OnInit, Output,EventEmitter, OnChanges, SimpleChanges
 })
 export class ChildJayComponentComponent implements OnInit, OnChanges {
 
-  @Input() firstNameFromParent : any; ///Attribute
+  // @Input() firstNameFromParent : any; ///Attribute
 
-  @Output() emitToParent = new EventEmitter<any>();
+  // @Output() emitToParent = new EventEmitter<any>();
+  // @Input() firstNameFromParent : any; ///Attribute
+  // @Output() emitToParent = new EventEmitter<any>();
+  form: FormGroup;
+  submitted = false;
+  
 
-  constructor() { 
+
+  constructor(private fd : FormBuilder,private router:Router) { 
     debugger
     console.log("constructor")
     
@@ -26,15 +34,36 @@ export class ChildJayComponentComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     debugger
-    console.log("ngOnInit")
-    this.firstNameFromParent;
+    this.form = this.fd.group(
+      {
+        fullname: [''], //Form Control Name
+        email: ['', [Validators.required, Validators.email]],
+      });
+
+
+    //   this.form.get('fullname')?.errors
+    // console.log("ngOnInit")
+    // this.firstNameFromParent;
+  }
+
+  onSubmit(form  :any){
+debugger
+   
+  if(!this.form.valid){
+    this.submitted = true;
+  }
+  else{
+    let model = this.form.value;
+  }
+
+  this.router.navigate(["/login"]);
   }
 
   passDataToParent()
   {
     debugger
 
-    this.emitToParent.emit(this.firstNameFromParent);
+    // this.emitToParent.emit(this.firstNameFromParent);
 
   }
 

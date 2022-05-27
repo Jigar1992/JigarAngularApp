@@ -10,11 +10,11 @@ import { ParentNikunjComponent } from './parent-nikunj/parent-nikunj.component';
 import { ParentJayComponentComponent } from './parent-jay-component/parent-jay-component.component';
 import {CanAuthServiceService} from './service/can-auth-service.service';
 import { TAParentComponent } from './ta-parent/ta-parent.component';
-
+import { ChildJayComponentComponent } from './child-jay-component/child-jay-component.component';
 
 const routes: Routes = [
   { path:  '', redirectTo: '/regForm', pathMatch: 'full' },
-  { path:  'jayPage', component:  ParentJayComponentComponent },
+  { path:  'jayPage', component:  ChildJayComponentComponent },
   { path:  'TejasAbdullPage', component: TAParentComponent },
   { path:  'productShruti', component: ProductListComponent  },
   { path:  'productShruti/:id', component: ProductListComponent  },

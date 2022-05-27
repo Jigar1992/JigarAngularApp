@@ -7,9 +7,21 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class ParentJayComponentComponent implements OnInit {
 
-  firstName : any = "Jigar Thakkar";
+  firstName : any = "yellow";
   disabled = false;
   isVIew = true;
+
+  list = [
+    {
+      
+      FirstName : "Jigar1",
+      LastName : "Thakkar2"
+    },
+    {
+      FirstName : "Tejas3333",
+      LastName : "Jivani33"
+    }
+  ]
 
   @ViewChild("childComponent")
   child!: ElementRef;

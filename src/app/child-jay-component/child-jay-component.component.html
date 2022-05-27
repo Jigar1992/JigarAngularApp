@@ -1,8 +1,48 @@
 <p>child-jay-component works!</p>
-
+<!-- 
 
 {{firstNameFromParent}}
 
 <input type="text" [(ngModel)]="firstNameFromParent">
 
-<button (click)="passDataToParent()">Go to Parent</button>
+<button (click)="passDataToParent()">Go to Parent</button> -->
+<a [routerLink]="['/jayPage']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+Login
+</a>
+
+<a [routerLink]="['/TejasAbdullPage']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    TejasAbdullPage Page
+    </a>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <input placeholder="Full Name" type="text" formControlName="fullname" />
+   
+       <div *ngIf="submitted && form.get('fullname')?.errors">
+           <div *ngIf="form.get('fullname')?.errors?.['required']">Fullname is required</div>
+         </div>
+
+         <br>
+         <br>
+         touched : {{form.get('fullname')?.touched}}
+         <br>
+         dirty : {{form.get('fullname')?.dirty}}
+         <br>
+         invalid :{{form.get('fullname')?.invalid}}
+
+         <br>
+
+
+
+         <input  placeholder="Email"  type="text" formControlName="email" />
+   
+         <div *ngIf="submitted && form.get('email')?.errors">
+             <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+             <div *ngIf="form.get('email')?.errors?.['email']">Please enter valid Email</div>
+           </div>
+           <br>
+           <br>
+           <button [disabled]="!this.form.valid" type="submit">Save</button>
+</form>
+   
+   
+   

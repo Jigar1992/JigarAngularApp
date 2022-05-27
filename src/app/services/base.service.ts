@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs'; //Reactive Extensions for JavaScript
+import { catchError, Observable, throwError } from 'rxjs'; 
+//Reactive Extensions for JavaScript
 import { Product } from './product';
 
 @Injectable({
