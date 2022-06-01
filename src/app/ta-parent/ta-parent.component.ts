@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { TAServicesService } from '../services/ta-services.service';
 
 @Component({
   selector: 'app-ta-parent', // <app-ta-parent></app-ta-parent>
@@ -8,7 +9,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 export class TAParentComponent implements OnInit,DoCheck {
 
   idText  = "txtInput"
-  FirstName : any = "";
+  FirstName : any = "fdsfsddffdsfsf";
   LastName : any = "";
   isVisible = true;
   list = [
@@ -24,13 +25,33 @@ export class TAParentComponent implements OnInit,DoCheck {
   ]
   // LastName : string = "JIgar";
 
-  constructor() { 
+  constructor(private _serviceName : TAServicesService) { /// Dependacy injection
     debugger
   }
 
   ngOnInit(): void { //Initialization
     debugger
     console.log("ngOnInit Called")
+debugger
+    this._serviceName.getMethod().then(success =>{
+debugger
+      var newList = success;
+
+    }).catch(error =>{
+      console.log(error)
+    })
+
+
+    this._serviceName.getMethod().then(success =>{
+      debugger
+            var newList = success;
+      
+          }).catch(error =>{
+            console.log(error)
+          })
+
+  //  var getALl = this._serviceName.getAll("/users?page=2");
+  //  var getALl1 = this._serviceName.getAll("/users/2");
   }
 
   ngDoCheck()

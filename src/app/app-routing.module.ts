@@ -11,15 +11,18 @@ import { ParentJayComponentComponent } from './parent-jay-component/parent-jay-c
 import {CanAuthServiceService} from './service/can-auth-service.service';
 import { TAParentComponent } from './ta-parent/ta-parent.component';
 import { ChildJayComponentComponent } from './child-jay-component/child-jay-component.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+
 
 const routes: Routes = [
-  { path:  '', redirectTo: '/regForm', pathMatch: 'full' },
+  { path:  '', redirectTo: '/regForm', pathMatch: 'full',   }, // Default
   { path:  'jayPage', component:  ChildJayComponentComponent },
-  { path:  'TejasAbdullPage', component: TAParentComponent },
+  { path:  'formValidation', component:  FormValidationComponent },
+  { path:  'TejasAbdullPage', component: TAParentComponent, canActivate:[CanAuthServiceService] },
   { path:  'productShruti', component: ProductListComponent  },
   { path:  'productShruti/:id', component: ProductListComponent  },
   { path:  'jigarDemo', component: JigarDemoComponent  },
-  { path:  'shruti', component: ShrutiComponentComponent,canActivate:[CanAuthServiceService]  },
+  { path:  'shruti', component: ShrutiComponentComponent, canActivate:[CanAuthServiceService]  },
   { path:  'parent', component: ParentComponentComponent,canActivate:[CanAuthServiceService]  },
   { path:  'angularHooks', component: AngularHooksComponent,canActivate:[CanAuthServiceService]  },
   { path:  'regForm', component: RegistrationFormComponent ,canActivate:[CanAuthServiceService] },

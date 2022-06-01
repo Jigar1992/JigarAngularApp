@@ -14,7 +14,7 @@ export class AngularHooksComponent implements OnInit {
   isFirstNameVisible = true;
   FirstName = "";
   isChecked = true;
-  firstNameColor = "jigar";
+  firstNameColor = "red";
 
   //DB 
   listProperty : any = [];

@@ -1,17 +1,23 @@
-
 import { HttpClient } from '@angular/common/http';
-import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs'; 
-//Reactive Extensions for JavaScript
 import { Product } from './product';
+import { environment } from '../../environments/environment';
 
-@Injectable({
-  providedIn: 'root'
+@Injectable({ //Dependacy injection
+  providedIn: 'root' // I can use this service in throught application
 })
-export class BaseService {
+export class TAServicesService {
 
-  constructor(public _http: HttpClient) { }
+  constructor(private _http : HttpClient) { //Dependacy injection
+
+   }
+
+
+  getList()
+  {
+    return "abc";
+  }
 
   getMethod(){
 
@@ -20,6 +26,7 @@ export class BaseService {
       .subscribe({
         next: (v) =>{
           sucess(v);
+          // localStorage.getItem("Key")
         } ,
         error: (e) => {
           console.error(e)
@@ -27,37 +34,14 @@ export class BaseService {
         complete: () =>{
           console.info('complete')
         } 
-       });
+      });
 
     })
-
-    
   }
+  
 
-  getMethod112(user :any){
-
-    return new Promise((resolve, reject) => { 
-      this._http.delete("http://localhost:3000/book-moduledsfsffd", user)
-      .subscribe({
-        next: (v) =>{
-          resolve(v);
-        } ,
-        error: (e) => {
-          console.error(e)
-        },
-        complete: () =>{
-          console.info('complete')
-        } 
-       });
-
-    })
-
-    
-  }
-
-
-  getAll(): Observable<Product[]> {
-    return this._http.get<Product[]>('http://localhost:3000/book-module')
+  getAll(URLName:any): Observable<Product[]> {
+    return this._http.get<Product[]>(environment.api_URL + URLName)
     .pipe(
       catchError(this.errorHandler)
     )
@@ -78,4 +62,3 @@ export class BaseService {
     return throwError(() => new Error(errorMessage))
  }
 }
-

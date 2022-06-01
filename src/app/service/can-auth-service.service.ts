@@ -1,26 +1,36 @@
 import { Injectable, TRANSLATIONS } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class CanAuthServiceService implements CanActivate {
 
-  constructor() { }
-
+  constructor(private router : Router) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    debugger
-    //Check logged in or not
-    // return true; //Redirection perform
-    return true; //Redirection D
-
-     //Check local storage >> Value
-    //  if(local >> Value exist) {
-    //   return true;
-    //  }
-    //  else{
-    //    return false
-    //  }
     
+    // debugger
+    
+// if(localStorage.getItem("token")){
+//   return true;
+// }
+// else{
+//   this.router.navigate(["/login"]);
+// }
+
+    // if(Check token is exist or not){
+    //   return true; //
+    // }
+    // else{
+    //   // return false; 
+    //   this.router.navigate(["/login"]);
+    // }
+
+
+    return true; // You have access to show page
+
+    return false; // You dont have access to open this page
+
   }
+  
  
 }

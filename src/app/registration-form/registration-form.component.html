@@ -8,18 +8,17 @@
     <input type="text" name="" id="" formControlName="FirstName">
     <br>
 
-    <!-- {{form.get('FirstName')?.touched}}
-    {{form.get('FirstName')?.dirty}} 
-    {{form.get('FirstName')?.invalid}} -->
+    <!-- {{form.get('FirstName')?.touched}} 
+    {{form.get('FirstName')?.dirty}}  
+    {{form.get('FirstName')?.invalid}}   -->
 
-    <div *ngIf="submit && form.get('FirstName')?.errors && 
-    (form.get('FirstName')?.touched || form.get('FirstName')?.dirty)">
+    <div *ngIf="submit && form.get('FirstName')?.errors">
         <div *ngIf="form.get('FirstName')?.errors?.['email']">
             Email is not valid
         </div>
 
         <div *ngIf="form.get('FirstName')?.errors?.['required']">
-            Email is required
+            First name is required
         </div>
 
     </div>
@@ -30,5 +29,5 @@
     <br>
     <br>
     <br>
-    <button type="submit">SAVE</button>
+    <button type="submit" [disabled]="!form.valid">SAVE</button>
 </form>

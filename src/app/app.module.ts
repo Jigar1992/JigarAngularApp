@@ -35,6 +35,12 @@ import { TAParentComponent } from './ta-parent/ta-parent.component';
 import { TAChildComponent } from './ta-child/ta-child.component';
 import { JayDemoDirectivesDirective } from './directive/jay-demo-directives.directive';
 
+import { JayServiceService } from './services/jay-service.service';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+import { TejasabduldirectiveDirective } from './directive/tejasabduldirective.directive';
+import { TAServicesService } from './services/ta-services.service';
+import { SunitaMayurServiceService } from './services/sunita-mayur-service.service';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +64,9 @@ import { JayDemoDirectivesDirective } from './directive/jay-demo-directives.dire
     ChildJayComponentComponent,
     TAParentComponent,
     TAChildComponent,
-    JayDemoDirectivesDirective
+    JayDemoDirectivesDirective,
+    FormValidationComponent,
+    TejasabduldirectiveDirective
    
   ],
   exports:[DemoDirectiveDirective],
@@ -69,7 +77,7 @@ import { JayDemoDirectivesDirective } from './directive/jay-demo-directives.dire
     FormsModule,
     HttpClientModule,
   ],
-  providers: [BaseService,StrutiDemoService,CanAuthServiceService,NIkunjServiceService],
+  providers: [BaseService,StrutiDemoService,CanAuthServiceService,NIkunjServiceService, JayServiceService,TAServicesService,SunitaMayurServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

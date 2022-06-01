@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SunitaMayurServiceService } from '../services/sunita-mayur-service.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -11,7 +12,7 @@ export class RegistrationFormComponent implements OnInit {
 
   form: FormGroup;
   submit =  false
-  constructor(public fb : FormBuilder, public router:Router,public activeRoutes:ActivatedRoute) { }
+  constructor(public fb : FormBuilder, public router:Router,public activeRoutes:ActivatedRoute, private _services : SunitaMayurServiceService) { } // Dependacy inejection
 
   ngOnInit(): void {
 
@@ -22,26 +23,32 @@ export class RegistrationFormComponent implements OnInit {
           LastName : ["", Validators.required]
       }
     )
+
+    this._services.getItems();
   }
 
   save(form : any)
   {
 
-
-    this.router.navigate(["/productShruti/" + 2]);
+debugger
+    // this.router.navigate(["/productShruti/" + 2]);
 
     debugger ;
     
     if(!this.form.valid){
       this.submit = true;
+      alert(1)
       return;
     }
     else{
+
+      var a =this.form.value
       this.submit = false;
+      alert(2)
     }
 
     //API >> SAVE
-    alert(1)
+  
   }
 
 }

@@ -1,0 +1,83 @@
+<p>form-validation works!</p>
+
+
+<a [routerLink]="['/jayPage']">jayPage</a>
+
+
+<form action="" [formGroup]="Registationform" (ngSubmit)="onSubmit()">
+
+  <input placeholder="Full Name" type="text" formControlName="fullname" />
+
+
+  <div *ngIf="Registationform.get('fullname')?.errors">
+    <div *ngIf="Registationform.get('fullname')?.errors?.['required']">Fullname is required</div>
+  </div>
+
+
+  <br>
+
+  <input placeholder="Full Name" type="text" formControlName="email" />
+
+
+  <div *ngIf="Registationform.get('email')?.errors">
+    <div *ngIf="Registationform.get('email')?.errors?.['required']">Email is required</div>
+    <div *ngIf="Registationform.get('email')?.errors?.['email']">Please enter proper email</div>
+  </div>
+
+  <br>
+  <button type="submit">SAVE</button><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  touched : {{Registationform.get('fullname')?.touched}}
+  <br>
+  dirty : {{Registationform.get('fullname')?.dirty}}
+  <br>
+  invalid :{{Registationform.get('fullname')?.invalid}}
+  <br>
+
+  <!-- <br>
+  <br>
+  touched : {{Registationform.get('fullname')?.touched}}
+  <br>
+  dirty : {{Registationform.get('fullname')?.dirty}}
+  <br>
+  invalid :{{Registationform.get('fullname')?.invalid}} -->
+
+
+</form>
+
+
+<!-- 
+<input type="text" id="22322" appTejasabduldirective> 
+
+
+<input type="text" id="12" appTejasabduldirective> 
+
+<div [ngStyle]="{'background': color}" *ngFor="let item of categoryList; index as i">
+    {{i}} ,  
+    {{item.FirstName}} , 
+    {{item.LastName}} <br>
+</div>
+
+<table border="1" *ngIf="!isShow; else elseBlock">
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Surname</th>
+    </tr>
+    <tr *ngFor="let item of categoryList; index as i" >
+        
+            <td>{{i}}</td>
+            <td>{{item.FirstName}}</td>
+            <td>{{item.LastName}} </td>
+      
+    </tr>
+</table>
+
+  <ng-template #elseBlock>
+    Content to render when condition is false.
+  </ng-template> -->

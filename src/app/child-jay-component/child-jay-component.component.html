@@ -6,6 +6,11 @@
 <input type="text" [(ngModel)]="firstNameFromParent">
 
 <button (click)="passDataToParent()">Go to Parent</button> -->
+{{ 1234.56 | currency:'CAD' }}
+
+<br>
+<br>
+
 <a [routerLink]="['/jayPage']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
 Login
 </a>

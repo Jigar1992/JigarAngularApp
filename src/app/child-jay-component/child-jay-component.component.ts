@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output,EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { JayServiceService } from '../services/jay-service.service';
 
 @Component({
   selector: 'app-child-jay-component',
@@ -17,10 +17,13 @@ export class ChildJayComponentComponent implements OnInit, OnChanges {
   // @Output() emitToParent = new EventEmitter<any>();
   form: FormGroup;
   submitted = false;
-  
+  list = [];
+
+  FirstName = "jay";
 
 
-  constructor(private fd : FormBuilder,private router:Router) { 
+  constructor(private fd : FormBuilder,private router:Router,
+    private _jayService : JayServiceService) { //Dependacy injection
     debugger
     console.log("constructor")
     
@@ -39,6 +42,17 @@ export class ChildJayComponentComponent implements OnInit, OnChanges {
         fullname: [''], //Form Control Name
         email: ['', [Validators.required, Validators.email]],
       });
+
+
+    let getList =  this._jayService.getServices().then(success =>{
+      debugger
+      console.log(success);
+      let getObject : any = success;
+      this.list = getObject.data;
+
+    }).catch(error =>{
+      debugger
+    });
 
 
     //   this.form.get('fullname')?.errors
