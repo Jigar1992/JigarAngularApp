@@ -40,6 +40,10 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { TejasabduldirectiveDirective } from './directive/tejasabduldirective.directive';
 import { TAServicesService } from './services/ta-services.service';
 import { SunitaMayurServiceService } from './services/sunita-mayur-service.service';
+import { SMDirectiveDirective } from './directive/sm-directive.directive';
+import { MTDemoComponent } from './mtdemo/mtdemo.component';
+import { MTDemoChildComponent } from './mtdemo-child/mtdemo-child.component';
+import { KMDemoDirective } from './directive/km-demo.directive';
 
 
 @NgModule({
@@ -66,7 +70,11 @@ import { SunitaMayurServiceService } from './services/sunita-mayur-service.servi
     TAChildComponent,
     JayDemoDirectivesDirective,
     FormValidationComponent,
-    TejasabduldirectiveDirective
+    TejasabduldirectiveDirective,
+    SMDirectiveDirective,
+    MTDemoComponent,
+    MTDemoChildComponent,
+    KMDemoDirective
    
   ],
   exports:[DemoDirectiveDirective],

@@ -22,7 +22,7 @@ export class TAServicesService {
   getMethod(){
 
     return new Promise((sucess, error) => { 
-      this._http.get("https://reqres.in/api/users?page=2")
+      this._http.delete("http://localhost:3001/items")
       .subscribe({
         next: (v) =>{
           sucess(v);

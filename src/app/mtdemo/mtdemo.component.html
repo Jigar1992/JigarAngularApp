@@ -1,0 +1,58 @@
+<p>mtdemo works!</p>
+<!-- 
+<input type="text" id="" name="" [ngStyle]="{'background-color' : styleValue}" >
+ -->
+
+<input type="text" >
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+<input type="text" appKMDemo>
+
+<!-- <input type="text" id="" name="" [ngStyle]="{background-color : }" [ngClass]="{'active' : isShow}"> -->
+
+<!-- <app-mtdemo-child *ngIf="isShow" [FirstNameChild]="FirstName" 
+(PassDataToParent)="getDataFromChild($event)"></app-mtdemo-child>
+
+{{LastName}}
+
+<label for="">{{FirstName}} </label> -->
+
+<!-- [] >> attribute
+() >> Event -->
+<!-- 
+<input type="text"   [value]="FirstName">
+<br>
+<br>
+<br>
+<input type="text" [(ngModel)]="FirstName"><br>
+<br>
+<br>
+
+<button (click)="save()">SAve</button> -->
+
+<br>
+<button (click)="save()">SAve</button>
+<br>
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    <tr *ngFor="let item of list">
+        <td>
+            {{item.FirstName}}
+        </td>
+        <td>
+            {{item.LastName}}
+        </td>
+        <td>
+            <button>EDIT</button>
+            <button>Delete</button>
+        </td>
+    </tr>
+</table>

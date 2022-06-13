@@ -5,9 +5,22 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class CanAuthServiceService implements CanActivate {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router){ //Dependency injection
+
+  }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    
+   
+    return true;
+    // if(local >> Token >> Exist >> ){
+    //   retun true;
+    // }
+    // else{
+    //   nevaite("Logout")
+    // }
+
+  }
+
+  
     // debugger
     
 // if(localStorage.getItem("token")){
@@ -26,11 +39,9 @@ export class CanAuthServiceService implements CanActivate {
     // }
 
 
-    return true; // You have access to show page
 
-    return false; // You dont have access to open this page
 
-  }
+  
   
  
 }

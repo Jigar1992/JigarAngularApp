@@ -22,7 +22,7 @@
 <br>
 {{ LastName | uppercase }}
 <br>
-{{ amount | multiply: 100 }}
+{{ 10 | multiply: 100 }}
 
 
 <input type="text" [(ngModel)]="LastName">
@@ -73,7 +73,7 @@
         type="text"
         formControlName="fullname"
         class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && form.get('fullname')?.errors }"
+        [ngClass]="{ 'is-invalid': false }"
       />
 
       

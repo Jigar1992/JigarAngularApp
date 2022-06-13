@@ -12,10 +12,12 @@ import {CanAuthServiceService} from './service/can-auth-service.service';
 import { TAParentComponent } from './ta-parent/ta-parent.component';
 import { ChildJayComponentComponent } from './child-jay-component/child-jay-component.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
+import { MTDemoComponent } from './mtdemo/mtdemo.component';
 
 
 const routes: Routes = [
   { path:  '', redirectTo: '/regForm', pathMatch: 'full',   }, // Default
+  { path:  'MayankKaran', component:  MTDemoComponent },
   { path:  'jayPage', component:  ChildJayComponentComponent },
   { path:  'formValidation', component:  FormValidationComponent },
   { path:  'TejasAbdullPage', component: TAParentComponent, canActivate:[CanAuthServiceService] },

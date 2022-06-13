@@ -8,6 +8,7 @@ import { TAServicesService } from '../services/ta-services.service';
 })
 export class TAParentComponent implements OnInit,DoCheck {
 
+  
   idText  = "txtInput"
   FirstName : any = "fdsfsddffdsfsf";
   LastName : any = "";
