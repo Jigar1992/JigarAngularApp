@@ -34,6 +34,7 @@ export class BaseService {
     
   }
 
+
   getMethod112(user :any){
 
     return new Promise((resolve, reject) => { 

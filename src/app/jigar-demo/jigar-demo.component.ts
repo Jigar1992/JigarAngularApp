@@ -118,31 +118,31 @@ debugger
 
          
 
-    // this.form = this.formBuilder.group(
-    //   {
-    //     fullname: ['', Validators.required],
-    //     username: [
-    //       '',
-    //       [
-    //         Validators.required,
-    //         Validators.minLength(6),
-    //         Validators.maxLength(20)
-    //       ]
-    //     ],
-    //     email: ['', [Validators.required, Validators.email]],
-    //     password: [
-    //       '',
-    //       [
-    //         Validators.required,
-    //         Validators.minLength(6),
-    //         Validators.maxLength(40)
-    //       ]
-    //     ],
+    this.form = this.formBuilder.group(
+      {
+        fullname: ['', Validators.required],
+        username: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(20)
+          ]
+        ],
+        email: ['', [Validators.required, Validators.email]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(40)
+          ]
+        ],
        
-    //     acceptTerms: [false, Validators.requiredTrue]
-    //   },
+        acceptTerms: [false, Validators.requiredTrue]
+      },
       
-    // );
+    );
   }
 
   ngDoCheck(){

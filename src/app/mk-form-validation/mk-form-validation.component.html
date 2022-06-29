@@ -1,0 +1,48 @@
+<p>mk-form-validation works!</p>
+
+Hello karan and Mayank
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    FullName : <input type="text" formControlName="fullname" />
+   
+       <!-- <div *ngIf="submitted && form.get('fullname')?.errors">
+           <div *ngIf="form.get('fullname')?.errors?.['required']">Fullname is required</div>
+         </div> -->
+
+         <div *ngIf="form.get('fullname')?.errors && form.get('fullname')?.touched">
+            <div *ngIf="form.get('fullname')?.errors?.['required']">Fullname is required</div>
+          </div>
+ 
+
+
+
+
+         <br>
+
+         <br>
+         Email : <input type="text" formControlName="email" />
+   
+       <div *ngIf="submitted && form.get('email')?.errors">
+           <div *ngIf="form.get('email')?.errors?.['required']">email is required</div>
+
+           <div *ngIf="form.get('email')?.errors?.['email']">Please enter valid email dfdsfs fdfsfsf</div>
+           
+         </div>
+
+        
+
+         <br>
+         <br>
+         touched :  {{form.get('fullname')?.touched}} 
+         <br>
+         dirty : {{form.get('fullname')?.dirty}}
+        <br>
+        invalid : {{form.get('fullname')?.invalid}}
+        <br>
+
+         <button [disabled]="!form.valid" type="submit">Save</button>
+</form>
+
+
+<a [routerLink]="['/MayankKaran']">GO to karan and mayank page</a>

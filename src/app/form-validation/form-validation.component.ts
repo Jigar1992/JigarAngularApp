@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class FormValidationComponent implements OnInit {
   constructor(public fb : FormBuilder, public router : Router,
      public activatedRoute : ActivatedRoute) { }
 
-  Registationform: FormGroup ;
+  // Registationform: FormGroup ;
   isSubmit = false;
   isShow = false;
   FirstName = "TEJAS";
@@ -41,16 +41,15 @@ export class FormValidationComponent implements OnInit {
 
   ];
 
+  testField = new FormControl('');
+
+
   ngOnInit(): void {
 
-    this.Registationform = this.fb.group(
-      {
-        fullname: [''], //Form Control Name
-        email: ['', [Validators.required, Validators.email]],
-      });
-
-
+    // this.testField = new FormControl("", customValidator)
+  
   }
+
 
   onSubmit(){
     debugger
@@ -71,3 +70,12 @@ export class FormValidationComponent implements OnInit {
   }
 
 }
+
+// function strLength(control: AbstractControl): {[key: string]: any} | null  {
+
+//   // toString() : 
+//   if (control.value && (control.value.length != 10) || (!/^([^0-9]*)$/.test(control.value))) {
+//     return { 'customValidator': {"valid":true} };
+//   }
+//   return { 'customValidator': { "valid": false }  };
+// }

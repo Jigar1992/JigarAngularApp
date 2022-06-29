@@ -4,8 +4,20 @@
 <a [routerLink]="['/jayPage']">jayPage</a>
 
 
-<form action="" [formGroup]="Registationform" (ngSubmit)="onSubmit()">
+<!-- <form action="" [formGroup]="Registationform" (ngSubmit)="onSubmit()"> -->
 
+
+  <input id="name" type="text" [formControl]="testField">
+
+  <!-- {{testField.errors?.['customValidator']}} -->
+  <span
+        *ngIf="testField.errors?.['customValidator']"
+      >
+        Should be alpha numeric and 10 charactor
+      </span> 
+  
+
+<!-- 
   <input placeholder="Full Name" type="text" formControlName="fullname" />
 
 
@@ -37,7 +49,7 @@
   dirty : {{Registationform.get('fullname')?.dirty}}
   <br>
   invalid :{{Registationform.get('fullname')?.invalid}}
-  <br>
+  <br> -->
 
   <!-- <br>
   <br>
@@ -48,7 +60,7 @@
   invalid :{{Registationform.get('fullname')?.invalid}} -->
 
 
-</form>
+<!-- </form> -->
 
 
 <!-- 

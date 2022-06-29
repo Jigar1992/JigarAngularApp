@@ -44,6 +44,8 @@ import { SMDirectiveDirective } from './directive/sm-directive.directive';
 import { MTDemoComponent } from './mtdemo/mtdemo.component';
 import { MTDemoChildComponent } from './mtdemo-child/mtdemo-child.component';
 import { KMDemoDirective } from './directive/km-demo.directive';
+import { MKFormValidationComponent } from './mk-form-validation/mk-form-validation.component';
+import { KMDemoServiceService } from './services/km-demo-service.service';
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import { KMDemoDirective } from './directive/km-demo.directive';
     SMDirectiveDirective,
     MTDemoComponent,
     MTDemoChildComponent,
-    KMDemoDirective
+    KMDemoDirective,
+    MKFormValidationComponent
    
   ],
   exports:[DemoDirectiveDirective],
@@ -85,7 +88,7 @@ import { KMDemoDirective } from './directive/km-demo.directive';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [BaseService,StrutiDemoService,CanAuthServiceService,NIkunjServiceService, JayServiceService,TAServicesService,SunitaMayurServiceService],
+  providers: [BaseService,StrutiDemoService,CanAuthServiceService,NIkunjServiceService, JayServiceService,TAServicesService,SunitaMayurServiceService, KMDemoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

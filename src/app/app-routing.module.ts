@@ -13,6 +13,7 @@ import { TAParentComponent } from './ta-parent/ta-parent.component';
 import { ChildJayComponentComponent } from './child-jay-component/child-jay-component.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { MTDemoComponent } from './mtdemo/mtdemo.component';
+import { MKFormValidationComponent } from './mk-form-validation/mk-form-validation.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path:  'MayankKaran', component:  MTDemoComponent },
   { path:  'jayPage', component:  ChildJayComponentComponent },
   { path:  'formValidation', component:  FormValidationComponent },
+  { path:  'MKValidation1', component:  MKFormValidationComponent },
   { path:  'TejasAbdullPage', component: TAParentComponent, canActivate:[CanAuthServiceService] },
   { path:  'productShruti', component: ProductListComponent  },
   { path:  'productShruti/:id', component: ProductListComponent  },

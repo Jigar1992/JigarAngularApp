@@ -83,12 +83,15 @@ export class ShrutiComponentComponent implements OnInit {
     this.firstName = "jigar";
   }
   
+
+
   keydownEnter(e:any){
     debugger
     console.log();
-
     
   }
+}
+  
 
   // PassDate(e :any)
   // {
@@ -115,4 +118,4 @@ export class ShrutiComponentComponent implements OnInit {
       
   // }
 
-}
+// }
