@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomValidationDirective } from '../directive/custom-validation.directive';
 
 @Component({
   selector: 'app-form-validation',
@@ -42,10 +43,14 @@ export class FormValidationComponent implements OnInit {
   ];
 
   testField = new FormControl('');
-
+  registerForm: FormGroup;
 
   ngOnInit(): void {
-
+    this.registerForm = this.fb.group({
+      //firstname: ['', Validators.required],
+      // ...
+      creditcardnumber: ['', CustomValidationDirective.validateCcNumber]
+   });
     // this.testField = new FormControl("", customValidator)
   
   }
@@ -79,3 +84,4 @@ export class FormValidationComponent implements OnInit {
 //   }
 //   return { 'customValidator': { "valid": false }  };
 // }
+

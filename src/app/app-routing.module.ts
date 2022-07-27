@@ -15,10 +15,12 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { MTDemoComponent } from './mtdemo/mtdemo.component';
 import { MKFormValidationComponent } from './mk-form-validation/mk-form-validation.component';
 
+import { MeshvaComponentComponent } from './meshva-component/meshva-component.component';
 
 const routes: Routes = [
-  { path:  '', redirectTo: '/regForm', pathMatch: 'full',   }, // Default
+  { path:  '', redirectTo: '/Login', pathMatch: 'full',   }, // Default
   { path:  'MayankKaran', component:  MTDemoComponent },
+  { path:  'MeshvaPage', component:  MeshvaComponentComponent },
   { path:  'jayPage', component:  ChildJayComponentComponent },
   { path:  'formValidation', component:  FormValidationComponent },
   { path:  'MKValidation1', component:  MKFormValidationComponent },
@@ -29,7 +31,7 @@ const routes: Routes = [
   { path:  'shruti', component: ShrutiComponentComponent, canActivate:[CanAuthServiceService]  },
   { path:  'parent', component: ParentComponentComponent,canActivate:[CanAuthServiceService]  },
   { path:  'angularHooks', component: AngularHooksComponent,canActivate:[CanAuthServiceService]  },
-  { path:  'regForm', component: RegistrationFormComponent ,canActivate:[CanAuthServiceService] },
+  { path:  'Login', component: RegistrationFormComponent ,canActivate:[CanAuthServiceService] },
   { path:  'NikunjParent', component: ParentNikunjComponent, canActivate:[CanAuthServiceService]  },
   { path: '**', component: ParentComponentComponent },
  

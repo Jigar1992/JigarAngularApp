@@ -46,6 +46,9 @@ import { MTDemoChildComponent } from './mtdemo-child/mtdemo-child.component';
 import { KMDemoDirective } from './directive/km-demo.directive';
 import { MKFormValidationComponent } from './mk-form-validation/mk-form-validation.component';
 import { KMDemoServiceService } from './services/km-demo-service.service';
+import { CustomValidationDirective } from './directive/custom-validation.directive';
+
+import { MeshvaComponentComponent } from './meshva-component/meshva-component.component';
 
 
 @NgModule({
@@ -77,8 +80,9 @@ import { KMDemoServiceService } from './services/km-demo-service.service';
     MTDemoComponent,
     MTDemoChildComponent,
     KMDemoDirective,
-    MKFormValidationComponent
-   
+    MKFormValidationComponent,
+    CustomValidationDirective,
+    MeshvaComponentComponent
   ],
   exports:[DemoDirectiveDirective],
   imports: [
@@ -87,6 +91,7 @@ import { KMDemoServiceService } from './services/km-demo-service.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
   ],
   providers: [BaseService,StrutiDemoService,CanAuthServiceService,NIkunjServiceService, JayServiceService,TAServicesService,SunitaMayurServiceService, KMDemoServiceService],
   bootstrap: [AppComponent]

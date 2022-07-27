@@ -2,20 +2,27 @@
 
 
 <a [routerLink]="['/jayPage']">jayPage</a>
+<form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <input id="name" type="text" formControlName="creditcardnumber">
 
+  <div *ngIf="registerForm.get('creditcardnumber')?.errors">
+    <div *ngIf="registerForm.get('creditcardnumber')?.errors?.['valid']">Fullname is required</div>
+  </div>
+
+</form>
 
 <!-- <form action="" [formGroup]="Registationform" (ngSubmit)="onSubmit()"> -->
 
-
+<!-- 
   <input id="name" type="text" [formControl]="testField">
 
-  <!-- {{testField.errors?.['customValidator']}} -->
+
   <span
         *ngIf="testField.errors?.['customValidator']"
       >
         Should be alpha numeric and 10 charactor
       </span> 
-  
+   -->
 
 <!-- 
   <input placeholder="Full Name" type="text" formControlName="fullname" />
